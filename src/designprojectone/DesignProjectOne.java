@@ -4,6 +4,7 @@
  */
 package designprojectone;
 import java.util.*;
+import java.text.*;
 /***************************************************
 *
 *  Program: Tech Fair Cost Calculator
@@ -14,28 +15,27 @@ import java.util.*;
 
 /**************** IPO CHART ************************
 *INPUT:
-*the number of students completing the Arduino project 
+*the number of students doing the Arduino project 
 *the number of students doing the Raspberry PI project
-* the number of students doing VR project
+*the number of students doing VR project
 * 
 *PROCESSING:
 *calculate the total material cost
 *divide the total cost by the total number of students participating
 *
 *OUTPUT:
-*the cost for each student to participate in the Science fair
+*the cost for each student to participate in the science fair
 *
 ***************************************************/
   
 /**************** TEST CASES ************************
-*Test      Input      Desired Ouput
+*Test      Input      Desired Output
 *          15 20 65   $67.5
 *          16 21 64   $64.09
-*          -1 1  1    Invalid input
-*
-*
-*
-*
+*          -1 1  1    Invalid Input
+*          0  1  2    $68.33
+*          20 20 30   $65.43
+*          99 99 99   $61.17
 *
 ***************************************************/
 public class DesignProjectOne {
@@ -46,6 +46,7 @@ public class DesignProjectOne {
     public static void main(String[] args) {
    //Write Pseudocode FIRST as comments and THEN write the code
    Scanner kb = new Scanner (System.in);
+   DecimalFormat df = new DecimalFormat ("#.00");
    
   //CONSTANTS
   final double DISCOUNT = 0.05;
@@ -109,7 +110,7 @@ public class DesignProjectOne {
   
   //output the cost for each student to participate in the science fair
   System.out.println("There are " + totalNum + " students participating in the science fair.");
-  System.out.println("Cost per student is $" + costPerStudent);
+  System.out.println("Every student has to pay $" + df.format(costPerStudent) + ".");
   
     }
     
