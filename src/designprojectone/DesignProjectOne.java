@@ -30,7 +30,7 @@ import java.text.*;
   
 /**************** TEST CASES ************************
 *Test      Input      Desired Output
-*          15 20 65   $67.5
+*          15 20 65   $67.50
 *          16 21 64   $64.09
 *          -1 1  1    Invalid Input
 *          0  1  2    $68.33
