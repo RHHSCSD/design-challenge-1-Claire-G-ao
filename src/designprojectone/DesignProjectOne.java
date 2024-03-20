@@ -53,27 +53,27 @@ public class DesignProjectOne {
   final double FIXED_COST = 50;
   
   //VARIABLES
-  int ArduinoNum, RaspberryNum, VRNum;
+  int arduinoNum, raspberryNum, VRNum;
   int totalNum;
-  double ArduinoCost, RaspberryCost, VRCost;
+  double arduinoCost, raspberryCost, VRCost;
   double costPerStudent, totalCost, totalFixedCost;
 
   //CODE
   //read in the number of students doing each project
   System.out.print("Enter the number of student doing Arduino Project: ");
-  ArduinoNum = kb.nextInt();
+  arduinoNum = kb.nextInt();
   System.out.print("Enter the number of students doing Raspberry PI Project: ");
-  RaspberryNum = kb.nextInt();
+  raspberryNum = kb.nextInt();
   System.out.print("Enter the number of students doing VR Project: ");
   VRNum = kb.nextInt();
   
   //Check if the inputs are valid
-  if (ArduinoNum < 0 || RaspberryNum < 0 || VRNum < 0){
+  if (arduinoNum < 0 || raspberryNum < 0 || VRNum < 0){
       System.out.println("Invalid Input");
       return;
   }
   //calculate the total number of students 
-  totalNum = ArduinoNum + RaspberryNum + VRNum;
+  totalNum = arduinoNum + raspberryNum + VRNum;
   
   //calculate the fixed cost based on the total number of students 
   if (totalNum > 100){
@@ -84,26 +84,26 @@ public class DesignProjectOne {
   }
   
   //calculate the cost for Arduino Project
-  if (ArduinoNum > 15){
-      ArduinoCost = ArduinoNum * 9.0;
+  if (arduinoNum > 15){
+      arduinoCost = arduinoNum * 9.0;
   }
   else{
-      ArduinoCost = ArduinoNum * 10.0;
+      arduinoCost = arduinoNum * 10.0;
   }
   
   //calculate the cost for Raspberry PI Project
-  if (RaspberryNum > 20){
-      RaspberryCost = RaspberryNum * 12.0;
+  if (raspberryNum > 20){
+      raspberryCost = raspberryNum * 12.0;
   }
   else{
-      RaspberryCost = RaspberryNum * 15.0;
+      raspberryCost = raspberryNum * 15.0;
   }
   
   //calculate the cost for VR Project
   VRCost = VRNum * 20.0;
   
   //calculate the total cost
-  totalCost = ArduinoCost + RaspberryCost + VRCost + totalFixedCost;
+  totalCost = arduinoCost + raspberryCost + VRCost + totalFixedCost;
   
   //calculate the cost per student
   costPerStudent = totalCost / totalNum;
