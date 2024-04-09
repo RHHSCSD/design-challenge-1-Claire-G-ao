@@ -5,6 +5,7 @@
 package designprojectone;
 import java.util.*;
 import java.text.*;
+import javax.swing.JOptionPane;
 /***************************************************
 *
 *  Program: Tech Fair Cost Calculator
@@ -60,12 +61,14 @@ public class DesignProjectOne {
 
   //CODE
   //read in the number of students doing each project
-  System.out.print("Enter the number of student doing Arduino Project: ");
-  arduinoNum = kb.nextInt();
-  System.out.print("Enter the number of students doing Raspberry PI Project: ");
-  raspberryNum = kb.nextInt();
-  System.out.print("Enter the number of students doing VR Project: ");
-  VRNum = kb.nextInt();
+  String input1 = JOptionPane.showInputDialog("Enter the number of student doing Arduino Project: ");
+  arduinoNum = Integer.parseInt(input1);
+  
+  String input2 = JOptionPane.showInputDialog("Enter the number of students doing Raspberry PI Project: ");
+  raspberryNum = Integer.parseInt(input2);
+  
+  String input3 = JOptionPane.showInputDialog("Enter the number of students doing VR Project: ");
+  VRNum = Integer.parseInt(input3);
   
   //Check if the inputs are valid
   if (arduinoNum < 0 || raspberryNum < 0 || VRNum < 0){
@@ -109,8 +112,12 @@ public class DesignProjectOne {
   costPerStudent = totalCost / totalNum;
   
   //output the cost for each student to participate in the science fair
-  System.out.println("There are " + totalNum + " students participating in the science fair.");
-  System.out.println("Every student has to pay $" + df.format(costPerStudent) + ".");
+  JOptionPane.showMessageDialog(null, "There are " + totalNum + " students participating in the science fair.");
+  int confirmValue = JOptionPane.showConfirmDialog(null, "Do you want to know the price?");
+  System.out.println(confirmValue);
+  if (confirmValue == 0){
+    JOptionPane.showMessageDialog(null, "Every student has to pay $" + df.format(costPerStudent) + ".");
+  }
   
     }
     
