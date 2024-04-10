@@ -114,7 +114,6 @@ public class DesignProjectOne {
   //output the cost for each student to participate in the science fair
   JOptionPane.showMessageDialog(null, "There are " + totalNum + " students participating in the science fair.");
   int confirmValue = JOptionPane.showConfirmDialog(null, "Do you want to know the price?");
-  System.out.println(confirmValue);
   if (confirmValue == 0){
     JOptionPane.showMessageDialog(null, "Every student has to pay $" + df.format(costPerStudent) + ".");
   }
